@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Vellum</title>
+  <link rel="stylesheet" href="css/settings.css">
+</head>
+<body>
+  <header>
+    <img src="icon.png" alt="" width="40" height="40">
+    <div class="brand">
+      <h1>Vellum</h1>
+      <p>Makes your screen feel like paper.</p>
+    </div>
+    <span class="chip" id="chip">On</span>
+    <label class="switch big" title="Alt Shift P">
+      <input type="checkbox" id="on" checked>
+      <span></span>
+    </label>
+  </header>
+
+  <section class="card">
+    <div class="card-head">
+      <div>
+        <h2>Paper</h2>
+        <p class="muted">Pick a paper. Star up to four favourites: the tray's "Next paper" cycles through them.</p>
+      </div>
+    </div>
+    <div class="papers" id="papers"></div>
+    <div class="row">
+      <div><b>Strength</b><small id="strength-note">Remembered for each paper, separately for light and dark mode.</small></div>
+      <div class="range"><input type="range" id="intensity" min="0.1" max="1" step="0.05"><output id="intensity-out"></output></div>
+    </div>
+  </section>
+
+  <section class="card">
+    <label class="row first">
+      <div><h2>Desk lamp</h2><small>A warm pool of light, as if a lamp stood beside your screen. It sits on top of the paper.</small></div>
+      <span class="switch"><input type="checkbox" id="lamp"><span></span></span>
+    </label>
+    <div id="lamp-options">
+      <div class="row">
+        <div><b>Where the light comes from</b></div>
+        <div class="spots" id="spots"></div>
+      </div>
+      <div class="row">
+        <div><b>Warmth</b><small>Candle-warm on the left, daylight on the right.</small></div>
+        <div class="range"><input type="range" id="lampKelvin" min="1800" max="5600" step="100"><output id="lampKelvin-out"></output></div>
+      </div>
+      <div class="row">
+        <div><b>Height</b><small>A higher lamp spreads its light wider and softer.</small></div>
+        <div class="range"><input type="range" id="lampHeight" min="0" max="1" step="0.05"><output id="lampHeight-out"></output></div>
+      </div>
+      <div class="row">
+        <div><b>Brightness</b></div>
+        <div class="range"><input type="range" id="lampStrength" min="0.1" max="1" step="0.05"><output id="lampStrength-out"></output></div>
+      </div>
+      <div class="row">
+        <div><b>Edge dimming</b><small>Darkens the far corners a little, like a real desk at night.</small></div>
+        <div class="range"><input type="range" id="lampEdge" min="0" max="1" step="0.05"><output id="lampEdge-out"></output></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="card">
+    <label class="row first">
+      <div><h2>Day and night</h2><small>Switch papers automatically, say crisp matte by day and warm parchment in the evening.</small></div>
+      <span class="switch"><input type="checkbox" id="schedule"><span></span></span>
+    </label>
+    <div id="schedule-options">
+      <div class="row">
+        <div><b>Day</b><small>From <input type="time" id="dayStart"></small></div>
+        <select id="dayPaper"></select>
+      </div>
+      <div class="row">
+        <div><b>Night</b><small>From <input type="time" id="nightStart"></small></div>
+        <select id="nightPaper"></select>
+      </div>
+    </div>
+  </section>
+
+  <section class="card">
+    <h2>Apps</h2>
+    <div class="row">
+      <div class="seg" role="radiogroup">
+        <label><input type="radio" name="appMode" value="except"> Everywhere, except in these apps</label>
+        <label><input type="radio" name="appMode" value="only"> Only in these apps</label>
+      </div>
+    </div>
+    <div class="apps" id="apps"></div>
+    <div class="row add">
+      <input list="seen" id="app-name" placeholder="App name, e.g. photoshop">
+      <datalist id="seen"></datalist>
+      <button id="add-app">Add</button>
+    </div>
+    <small class="muted">Apps you've used recently are suggested as you type. Good for photo and video editors, where you want true colours.</small>
+  </section>
+
+  <section class="card">
+    <label class="row first">
+      <div><b>Start with my computer</b><small>Vellum opens quietly in the background when you sign in.</small></div>
+      <span class="switch"><input type="checkbox" id="autostart"><span></span></span>
+    </label>
+    <div class="row">
+      <div><b>Take a break from paper</b><small>Turns it off for an hour, then back on by itself.</small></div>
+      <button id="snooze">Pause for an hour</button>
+    </div>
+  </section>
+
+  <footer>
+    <p>Vellum only draws on top of your screen. It never reads or records what's on it (it only checks which app is in front, for your app rules) and never connects to the internet.</p>
+    <p><kbd>Alt</kbd> <kbd>Shift</kbd> <kbd>P</kbd> turns paper on and off from anywhere. <button class="link" id="quit">Quit Vellum</button></p>
+  </footer>
+  <script type="module" src="js/settings.js"></script>
+</body>
+</html>
