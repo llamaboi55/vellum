@@ -112,6 +112,11 @@ npm test             # paper, schedule and app-rule tests (node --test) and Rust
 
 Releases are built for all three systems by GitHub Actions whenever the version in `src-tauri/tauri.conf.json` changes on `main`.
 
+## Where the idea came from
+
+Found through this Instagram Reel: https://www.instagram.com/p/DZ2oqdivHdF/
+This project isn't affiliated with the app shown there.
+
 ## License
 
 MIT. Vellum is an independent project and isn't affiliated with any other paper-screen app.
