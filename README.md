@@ -70,7 +70,7 @@ Every paper is generated in code by a small shader, so it stays crisp on any scr
 - **Pause for an hour,** **Alt Shift P** to turn it on and off from anywhere, start with your computer.
 - Covers every connected screen, and every click and key goes straight through to your apps.
 
-<img src="docs/screenshots/01-settings.png" width="480" alt="Vellum settings">
+<img src="docs/screenshots/01-settings.png" width="560" alt="Vellum settings">
 
 ## Compared to paid paper-screen apps
 
